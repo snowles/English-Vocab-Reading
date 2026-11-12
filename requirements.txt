@@ -1,0 +1,48 @@
+# 英语词汇伴读 Skill —— 运行依赖
+# 核心只需 Python 3.10+ 与 lxml（ZIP/XML 用标准库 zipfile + lxml）
+
+lxml>=4.9
+
+# 可选：EPUB 规范校验（EPUBCheck，Java 工具），不是 Skill 的运行依赖。
+# validate_epub.py 自动探测；找不到会明确写「未运行」，不会冒充通过。
+#   探测 JAR：EPUBCHECK_JAR > PATH 上的 epubcheck > ~/tools/epubcheck*/epubcheck.jar
+#   查找 Java：PATH > EPUBCHECK_JAVA > JAVA_HOME > ~/tools/java/**/bin/java.exe
+#   （约定目录自动发现：宿主进程未继承用户环境变量时也能找到便携 JRE）
+#   CLI 用 `--json <file>`（4.x/5.x 通用），不是 `--format json`。
+#
+# 本机开发期校验用过（2026-11-06；具体路径随机器不同，仅供参照）：
+#   JAVA_HOME     指向便携 JRE 目录（如 ...\jre-21.x）
+#   EPUBCHECK_JAR 指向 epubcheck.jar（如 ...\epubcheck-5.4.0\epubcheck.jar）
+#   java -jar "%EPUBCHECK_JAR%" <book.epub> --json report.json -q
+#   也可把它们放在 ~/tools/epubcheck*/ 与 ~/tools/java/**/bin/java.exe，
+#   上面第 9 行的约定目录探测会自动找到，无需设置环境变量。
+# 跑 run_pipeline 时默认执行，并把完整官方 JSON 留档为
+#   <产物>.epub.epubcheck.json（顶层 messages/checker/publication/items，
+#    每条 messages[] 含 ID/severity/locations[]/additionalLocations），
+#   源书基线缓存到 <out>/_epubcheck_baseline/*.baseline{,.official}.json。
+#
+# §22 发布策略（默认 compatible，仍会运行 EPUBCheck）：
+#   python scripts/run_pipeline.py ... --check-policy compatible
+#   python scripts/run_pipeline.py ... --check-policy strict   # 要求官方 0 ERROR/FATAL
+#   --no-epubcheck 只作开发期临时跳过；跳过 ≠ 合规，且与 strict 冲突（exit 2）。
+#   validation.ok = 内部硬校验；release.official_check.status = 官方状态；
+#   release.publishable = 是否可交付，三者不可混用。
+#
+# 有限确定性兼容修复（显式调用，默认流水线不启用；工作副本须重建 v6 绑定）：
+#   python -m scripts.compat_fixes --book <书> --analyze-only
+#   python -m scripts.compat_fixes --book <书> --out <工作副本> --report <清单.json>
+#
+# §23 随包词库（零配置，无需任何额外依赖）：
+#   assets/lexicon.vault 为 vocab-lexicon-vault/v1 纯文本容器（标准库实现：
+#   分行 base64 + 流混淆 + HMAC-SHA256 完整性校验），load_lexicon() 按文件头
+#   自动解封；--lexicon 变可选参数，用户自备 CSV 仍按明文读取。
+#   只防顺手查看，不防有动机者；产物章末完整词条按用户口径保留。
+#   开发期重建（原始明文 CSV 不要放进分发包）：
+#     python -m scripts.pack_lexicon --csv <开发目录/原始.csv> --out assets/lexicon.vault
+#   分发前须确认词表再分发许可。
+#   面向人的快速上手见 README.md；宿主编排契约见 SKILL.md 顶部。
+#
+#   v6 内容版本绑定按解封后的 CSV 内容哈希（lexicon_content_sha256），
+#   重新封装容器不会让已有 scope / ann / review 失效。
+#
+# 当前全量回归：python -m unittest discover -s tests -p "test_*.py" → 288 项 / 12 文件全过。

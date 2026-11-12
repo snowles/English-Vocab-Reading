@@ -1,0 +1,58 @@
+# ── Python 缓存 ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.python-version
+
+# ── 本机临时产物 / 验证解压副本（可由脚本重建） ────────────
+交付验证/
+.tmp*/
+out/
+*.log
+*.bak
+
+# ── 发布包：公开仓库只放正式包，测试包仅本地使用 ────────────
+dist/*.zip
+!dist/vocab-reading-0.10.7.zip
+
+# ── 本地开发 / 验收 / 测试过程材料（不进入公开仓库） ─────────
+# 开发留档，用户安装技能时不需要。文件保留在本机，仅排除入库。
+H3_AB对照/
+H3_AB对照方案.md
+词库合并试点v1/
+外机测试验收证据/
+ACCEPTANCE.md
+P1b执行报告.md
+关3边界压测报告.md
+关3边界压测结果.json
+外机测试验收报告.md
+审计报告_语境标注_v5.md
+开箱即用交付审计与修复计划.md
+整改报告_v5审计.md
+第20节_A批验收.md
+v5审计整改任务书.md
+英语词汇伴读 Skill 设计文档.md
+styles.md
+report_example.json
+
+# 注意：schema.md 是 pack_release.py 发布清单的必需项，必须随仓库分发
+
+# ── 含受版权保护书籍正文的测试材料 ─────────────────────────
+# 这些 EPUB / HTML 是《哈利波特》《小王子》《老人与海》的全文或大段
+# 正文衍生品，仅供本地验收留证，不随公开仓库分发。
+*.epub
+!tests/fixtures/*.epub
+!assets/**/*.epub
+*.html
+!tests/**/*.html
+examples/preview_two_chapters/
+外机测试v1/
+阅读体验试点v1/
+重跑第一章/
+P1b验证/
+
+# ── 系统文件 ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

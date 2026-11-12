@@ -1,0 +1,32 @@
+本文件仅为「随包分发必须附 MIT LICENSE 原文与出处」的备查登记。
+来源：skywind3000/ECDICT  https://github.com/skywind3000/ECDICT
+本地归档：C:/Users/user/Downloads/ECDICT-master.zip
+本项目只取 ecdict.csv 的字段补充与 lemma.en.txt 的词形映射；
+不引入 77 万全量词条、短语、网络释义、detail/audio 空列。
+注意：历史验收报告 VR-ACC-2026-1109-01 的 D-05「词表再分发许可未确认」
+不会因本次合并自动结案，反而新增一个需要登记的来源。
+以下为 ECDICT-master/LICENSE 原文：
+
+============================================================
+
+MIT License
+
+Copyright (c) 2025 Linwei
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

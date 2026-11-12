@@ -1,0 +1,14 @@
+# 统一按 LF 存储，避免 Windows 检出时被转成 CRLF
+* text=auto eol=lf
+
+# 内容哈希敏感 / 二进制文件：按字节原样保存，禁止任何换行转换
+# lexicon.vault / lexicon.forms.vault 是 HMAC 容器，一旦被转换即校验失败
+*.vault -text
+*.zip -text
+*.epub -text
+# 词表模板含 UTF-8 BOM + CRLF，需与发布包逐字节一致
+*.csv -text
+*.pyc -text
+*.png -text
+*.jpg -text
+*.jpeg -text

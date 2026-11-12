@@ -1,0 +1,79 @@
+{
+  "schema": "vocab-lexicon-source/v1",
+  "bundled": {
+    "path": "assets/lexicon.vault",
+    "container_bytes": 2778798,
+    "content_sha256": "bfbc6d423aca7090f8cef74c5e23f45fb4bfd0b8b727e7b5d26ecc0059657e91",
+    "unpacked_bytes": 2062556
+  },
+  "source": {
+    "file_name": "层A_增强词表.csv",
+    "sha256": "bfbc6d423aca7090f8cef74c5e23f45fb4bfd0b8b727e7b5d26ecc0059657e91",
+    "note": "由 四级六级雅思词汇表.csv 的 6 列原值 + ECDICT 层 A 字段增强而成；明文源表只留开发目录，不随包分发"
+  },
+  "content": {
+    "rows": 6861,
+    "entries": 6861,
+    "distinct_heads": 6929,
+    "columns": 15,
+    "grade_labels": [
+      "六级",
+      "四级",
+      "雅思"
+    ],
+    "duplicate_rows": 0,
+    "problem_rows": 0,
+    "with_phonetic": 6757,
+    "with_example": 3624,
+    "with_form_info": 5447
+  },
+  "enhanced": {
+    "schema": "vocab-lexicon-enhanced/v1",
+    "layer_a": "字段增强：音标(L1)、词根、词形信息、词频BNC、词频当代、柯林斯、牛津3000、英义、数据来源；原有 5 列逐行不变，例句与词条数一条不多",
+    "layer_b": {
+      "path": "assets/lexicon.forms.vault",
+      "container_bytes": 1398601,
+      "content_sha256": "f2c5204b9afc620bd9718b1527856c2fbc8dfe9dcb13ee419ffa31f2ae0ef522",
+      "unpacked_bytes": 1038080,
+      "rows": 11825,
+      "with_surface_phonetic": 7219,
+      "columns": ["词形", "词根", "词形音标", "词形信息"],
+      "note": "只作为 lemma_candidates() 的候选来源，仍须过 §21 token 定位与词形硬校验"
+    },
+    "phonetic_policy": "L1 字符归一（scripts/phonetic_l1.py），L2 不做；词条块音标取被标注词形自己的，无则整行省略，不回退词头、不编造",
+    "example_policy": "例句有就有、没有不强行加、不乱造；不展示书中原句"
+  },
+  "capability": {
+    "supported_grade_labels": [
+      "四级",
+      "六级",
+      "雅思",
+      "托福",
+      "GRE",
+      "牛津3000",
+      "AWL"
+    ],
+    "note": "解析层支持 7 类标签，随包词库只含四级/六级/雅思；用户自备含其它标签的 CSV 时，标签照常解析与显示"
+  },
+  "license": {
+    "code_and_docs": "MIT（见 LICENSE）",
+    "third_party": "ECDICT，MIT，Copyright (c) 2025 Linwei；原文见 THIRD_PARTY_NOTICES.md / ECDICT_LICENSE.txt",
+    "lexicon_redistribution": "MIT。原始中文词表（四级六级雅思词汇表.csv）由本项目维护者 FunInSpring 本人整理并授权按 MIT 随本项目再分发（2026-11-12 确认）；派生的增强词表与词形映射同属本项目作品，同为 MIT。详见 THIRD_PARTY_NOTICES.md §3",
+    "original_wordlist": {
+      "file_name": "四级六级雅思词汇表.csv",
+      "rights_holder": "FunInSpring",
+      "license": "MIT",
+      "confirmed_on": "2026-11-12",
+      "confirmation": "权利人本人在项目会话中明确：该词表由本人整理，按 MIT 授权给大家",
+      "status": "closed"
+    }
+  },
+  "verification": {
+    "bundled_equals_source_bytes": true,
+    "requested_in_history": {
+      "name": "全量英语词表_最终版_v2.csv",
+      "found_on_this_machine": false,
+      "conclusion": "本机未找到该文件，无法证明随包词库与历史指定版本一致；当前随包内容可确定等于 层A_增强词表.csv（逐字节相同），其原始 5 列等于 四级六级雅思词汇表.csv。若确需该版本，需提供文件后重新封装并更新本记录。"
+    }
+  }
+}
