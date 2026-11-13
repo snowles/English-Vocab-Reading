@@ -944,7 +944,9 @@ VOCABLEX1
 反推词库——后者按用户口径有意保留完整释义 / 例句 / 音标。
 
 开发期重建：`python -m scripts.pack_lexicon --csv <原始.csv> --out assets/lexicon.vault`
-（会做往返校验；原始明文 CSV 不进分发包）。分发前须确认词表再分发许可。
+（会做往返校验；原始明文 CSV 不进分发包）。再分发许可已明确（整套 MIT、D-05 已结案）：
+分发时随包保留 `LICENSE`、`THIRD_PARTY_NOTICES.md` 与 `references/ECDICT_LICENSE.txt`，
+详见 `THIRD_PARTY_NOTICES.md` §3。
 
 ### 14.2 CLI 与报告变化
 
@@ -1082,6 +1084,6 @@ exit 6 现在同时表示「发布门槛未通过」与「直出 0 标注不交�
 
 ### 15.7 许可文件（随发布包）
 
-`LICENSE`（本项目 MIT）、`THIRD_PARTY_NOTICES.md`（分层口径与唯一未决项）、
+`LICENSE`（本项目 MIT）、`THIRD_PARTY_NOTICES.md`（分层口径、D-05 授权已结案）、
 `references/ECDICT_LICENSE.txt`（ECDICT MIT 原文）、
 `assets/lexicon.source.json` 的 `license` 字段。详见 `THIRD_PARTY_NOTICES.md`。

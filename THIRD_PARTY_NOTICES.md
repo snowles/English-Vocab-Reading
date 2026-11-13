@@ -36,7 +36,7 @@ MIT 允许使用、复制、修改、合并、发布、分发、再授权与销�
 | 授权方式 | **MIT**（与本项目同一许可，不引入第二套） |
 | 确认时间 | 2026-11-12 |
 | 确认原话 | 「四级/六级雅思词表是我自己整理的，也按照 MIT 授权给大家」 |
-| 登记位置 | `assets/lexicon.source.json` → `license.lexicon_redistribution` |
+| 登记位置 | `assets/lexicon.source.json` → `license.original_wordlist`（`status: closed`）与 `license.lexicon_redistribution` |
 
 权利人与本项目维护者是同一人，因此 ④ 不再存在"第三方授权缺失"问题：词表可按 MIT
 使用、复制、修改、分发、再授权与销售，条件是**保留版权声明与本许可声明**——即随包携带
@@ -54,7 +54,7 @@ MIT 允许使用、复制、修改、合并、发布、分发、再授权与销�
 | 文件 | 作用 |
 |---|---|
 | `LICENSE` | 本项目 MIT 原文 |
-| `THIRD_PARTY_NOTICES.md` | 本声明（分层口径 + 待确认项） |
+| `THIRD_PARTY_NOTICES.md` | 本声明（分层口径 + D-05 结案说明） |
 | `references/ECDICT_LICENSE.txt` | ECDICT MIT 原文 + 出处登记 |
 | `assets/lexicon.source.json` | 词库来源、内容哈希与 `license` 字段 |
 | `assets/lexicon.vault` / `assets/lexicon.forms.vault` | 随包数据容器 |

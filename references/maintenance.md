@@ -155,9 +155,10 @@ EPUBCheck 5.4.0，路径见 `requirements.txt`。`find_epubcheck()` 自动探测
   python -m scripts.pack_lexicon --csv <开发目录/原始.csv> --out assets/lexicon.vault
   ```
   `pack_lexicon.py` 会做往返校验并打印源 CSV 的 SHA-256 前 16 位。
-- ⚠️ **分发前须确认词表再分发许可**。当前容器由用户个人目录的
-  `四级六级雅思词汇表.csv`（6861 条 / 702 KB）生成；若该表来自第三方整理，
-  封装不解决版权问题。
+- 许可已明确：原始中文词表 `四级六级雅思词汇表.csv`（6861 条 / 702 KB）由本项目
+  维护者本人整理并按 MIT 授权（2026-11-12 确认，D-05 已结案）；ECDICT 部分按 MIT
+  原文随包。分发时随包保留 `LICENSE`、`THIRD_PARTY_NOTICES.md`、
+  `references/ECDICT_LICENSE.txt` 即可。封装只是轻量门槛、不是授权手段。
 
 ### 不交付空书（§23 修正）
 

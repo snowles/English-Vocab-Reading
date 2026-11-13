@@ -1,7 +1,7 @@
 # 英语词汇伴读
 
 把一本英文原版 EPUB 变成「边读边背单词」的版本：正文里在生词后加一个浅色短注，
-章节末尾按编号给出完整词条（释义、例句、音标、等级）。
+自然段后就近按编号给出完整词条（释义、例句、音标、词形信息），短段落合并成一组。
 
 **不改写英文正文、不修改你的原书。** 词库已经随包，不需要你准备词表。
 开始之前助手会问你要「初级」还是「高级」：初级在每个自然段后面附「参考译文：…」，
@@ -79,8 +79,9 @@ AI 助手完成——如果那个助手是云端服务，正文会按它自己�
 Calibre / Thorium / Apple Books 等具体阅读器尚未逐一验收。
 
 **这个词库能随便转发吗？**
-项目代码与文档按 MIT，ECDICT 数据按其 MIT 原文随包；**原始中文词表的权利人授权还没核实**，
-封装不等于授权。完整口径与待确认项见 `THIRD_PARTY_NOTICES.md`。
+可以，整套按 MIT：项目代码与文档、ECDICT（按其 MIT 原文随包）、以及原始中文词表
+（由作者本人整理并按 MIT 授权）都已明确许可，保留版权与许可声明即可自由再分发。
+封装只是轻量门槛、不是授权手段。完整分层口径见 `THIRD_PARTY_NOTICES.md`。
 
 ---
 
@@ -99,9 +100,10 @@ Calibre / Thorium / Apple Books 等具体阅读器尚未逐一验收。
 | `INSTALL.md` | 安装、启用、自检与常见安装问题 |
 | `references/` | 按需读取的实现细节、兼容策略、测试清单与路线图 |
 | `schema.md` | 所有 JSON / 容器 / sidecar 格式 |
-| `LICENSE` / `THIRD_PARTY_NOTICES.md` | MIT 许可与第三方声明（含未决授权项） |
+| `LICENSE` / `THIRD_PARTY_NOTICES.md` | MIT 许可与第三方声明（分层口径、授权已结案） |
 | `ACCEPTANCE.md` | 逐阶段实测与当前交付判定（开发项目内，不随发布包） |
 | `requirements.txt` | 运行依赖与工具探测说明 |
 
-> 分发前请读 `THIRD_PARTY_NOTICES.md`：ECDICT 部分按 MIT 已合规，
-> 但原始中文词表的再分发授权仍待权利人确认，封装不解决版权问题。
+> 分发前请读 `THIRD_PARTY_NOTICES.md`：整套按 MIT 统一许可，ECDICT 原文与
+> 原始中文词表授权均已明确（D-05 已结案）。分发时务必随包保留
+> `LICENSE`、`THIRD_PARTY_NOTICES.md` 与 `references/ECDICT_LICENSE.txt`。

@@ -36,13 +36,14 @@ lxml>=4.9
 #   assets/lexicon.vault 为 vocab-lexicon-vault/v1 纯文本容器（标准库实现：
 #   分行 base64 + 流混淆 + HMAC-SHA256 完整性校验），load_lexicon() 按文件头
 #   自动解封；--lexicon 变可选参数，用户自备 CSV 仍按明文读取。
-#   只防顺手查看，不防有动机者；产物章末完整词条按用户口径保留。
+#   只防顺手查看，不防有动机者；产物段后词条块按用户口径保留完整释义/例句/音标。
 #   开发期重建（原始明文 CSV 不要放进分发包）：
 #     python -m scripts.pack_lexicon --csv <开发目录/原始.csv> --out assets/lexicon.vault
-#   分发前须确认词表再分发许可。
+#   再分发许可已明确（整套 MIT、D-05 已结案）；分发时随包保留 LICENSE、
+#     THIRD_PARTY_NOTICES.md、references/ECDICT_LICENSE.txt，详见 THIRD_PARTY_NOTICES.md §3。
 #   面向人的快速上手见 README.md；宿主编排契约见 SKILL.md 顶部。
 #
 #   v6 内容版本绑定按解封后的 CSV 内容哈希（lexicon_content_sha256），
 #   重新封装容器不会让已有 scope / ann / review 失效。
 #
-# 当前全量回归：python -m unittest discover -s tests -p "test_*.py" → 288 项 / 12 文件全过。
+# 当前全量回归：python -m unittest discover -s tests -p "test_*.py" → 387 项 / 20 文件全过。
